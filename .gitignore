@@ -1,0 +1,33 @@
+# Ignore bundler config.
+/.bundle
+
+# Ignore all logfiles and tempfiles.
+/log/*
+!/log/.keep
+/tmp
+.DS_Store
+.swp
+.approvals
+.torus.json
+coverage
+/tags
+
+#Ignore public uploads
+/public/uploads/*
+/public/c/*
+/public/i/*
+/public/assets/*
+
+#Ignore node_modules
+node_modules/
+
+# Generated js bundles
+/app/assets/javascripts/generated/*
+latest.dump
+.byebug_history
+
+# Ignore application configuration
+/config/application.yml
+/public/packs
+/public/packs-test
+/node_modules
