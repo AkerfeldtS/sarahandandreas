@@ -31,3 +31,14 @@ latest.dump
 /public/packs
 /public/packs-test
 /node_modules
+
+# Ignore target folder
+target/
+*.class
+*.jar
+*.war
+*.ear
+*.logs
+*.iml
+.idea/
+.eclipse
