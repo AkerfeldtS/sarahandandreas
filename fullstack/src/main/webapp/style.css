@@ -1,0 +1,8 @@
+body {
+    background-color: black;
+}
+
+#testDiv {
+    background-color: aqua;
+    border: 2px;
+}
