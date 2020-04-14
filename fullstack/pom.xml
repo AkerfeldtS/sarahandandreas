@@ -28,6 +28,7 @@
   </dependencies>
 
   <build>
+    <finalName>fullstack</finalName>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
         <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
@@ -55,6 +56,20 @@
         <plugin>
           <artifactId>maven-jar-plugin</artifactId>
           <version>3.0.2</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-war-plugin</artifactId>
+          <version>3.2.2</version>
+          <configuration>
+            <attachClasses>true</attachClasses>
+            <webXml>target/fullstack/WEB-INF/web.xml</webXml>  <!-- Där web.xml ska lägga sig --> 
+            <webResources>
+              <resource>
+                <directory>src/main/webapp</directory> <!-- Mappen som innehåller "WEB-INF/web.xml” och övrig kod som ska vara i .war-filen -->
+                <filtering>true</filtering>
+              </resource>
+            </webResources>
+          </configuration>
         </plugin>
         <plugin>
           <artifactId>maven-install-plugin</artifactId>

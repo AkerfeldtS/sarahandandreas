@@ -1,44 +1,35 @@
-# Ignore bundler config.
-/.bundle
-
-# Ignore all logfiles and tempfiles.
-/log/*
-!/log/.keep
-/tmp
-.DS_Store
-.swp
-.approvals
-.torus.json
-coverage
-/tags
-
-#Ignore public uploads
-/public/uploads/*
-/public/c/*
-/public/i/*
-/public/assets/*
-
-#Ignore node_modules
-node_modules/
-
-# Generated js bundles
-/app/assets/javascripts/generated/*
-latest.dump
-.byebug_history
-
-# Ignore application configuration
-/config/application.yml
-/public/packs
-/public/packs-test
-/node_modules
-
-# Ignore target folder
-target/
+# Compiled class file
 *.class
+
+# Log file
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
 *.jar
 *.war
+*.nar
 *.ear
-*.logs
-*.iml
-.idea/
-.eclipse
+*.zip
+*.tar.gz
+*.rar
+target/
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+
+# ignore visual studio code stuff
+.vscode/
+.classpath
+.project
+.settings/
+.factorypath
+
+# ignore mac files
+.DS_Store
