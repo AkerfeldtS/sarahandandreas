@@ -1,8 +1,8 @@
 package com.aprilproject.spring;
 
 import org.springframework.data.annotation.Id;
-import java.lang.Override;
 
+import java.lang.Override;
 
 public class Customer {
 
@@ -10,19 +10,21 @@ public class Customer {
     public String id;
 
     public String firstName;
-    public String lastName;
 
     public Customer() {}
 
-    public Customer(String firstName, String lastName) {
+    public Customer(String firstName) {
         this.firstName = firstName;
-        this.lastName = lastName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     @Override
     public String toString() {
         return String.format(
-            "Customer[id=%s, firstname='%s', lastname='%s']",
-            id, firstName, lastName);
+            "Customer[id=%s, firstname='%s']",
+            id, firstName);
     }
 }

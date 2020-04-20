@@ -3,23 +3,17 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        <title>Add your name</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
         
-        <h1>Form</h1>
-        <form action="#" th:action="@{/greeting}" th:object="${greeting}" method="POST">
-            <p>ID: <input type="text" th:field="*{id}" /></p>
-            <p>Message: <input type="text" th:field="*{content}" /></p>
+        <h1>Add your name</h1>
+        <form action="#" th:action="@{/customer}" th:object="${customer}" method="POST">
+            <p>Firstname: <input type="text" th:field="*{firstName}" /></p>
             <p><input type="submit" value="Submit"/> <input type="reset" value="Reset" /></p>
         </form>
-
-  
-
-   
-
     </body>
 </html>
