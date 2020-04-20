@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Customer result</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <h1>Result</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th> First name </th>
+                </tr>
+            </thead>
+            <tbody>
+            <tr th:if="${list.empty}">
+                    <td colspan="2"> No Customers Available </td>
+                </tr>
+                <tr th:each="customer : ${list}">
+                    <td><span th:text="${customer.firstName}"></span></td>
+            </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

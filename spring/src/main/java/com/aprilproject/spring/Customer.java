@@ -1,9 +1,10 @@
 package com.aprilproject.spring;
 
 import org.springframework.data.annotation.Id;
-
+import org.springframework.data.mongodb.core.mapping.Document;
 import java.lang.Override;
 
+@Document(collection = "customer2")
 public class Customer {
 
     @Id
@@ -19,6 +20,10 @@ public class Customer {
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
+    }
+
+    public String getFirstName() {
+        return this.firstName;
     }
 
     @Override

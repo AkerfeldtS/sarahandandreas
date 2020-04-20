@@ -6,26 +6,23 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DemoApplication implements CommandLineRunner {
-
-	@Autowired
-	private CustomerRepository repository;
+public class DemoApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
 	}
-
+/* 
 	@Override
 	public void run(String... args) throws Exception {
 		
 		repository.deleteAll();
-		Customer customer1 = new Customer("Sarah", "Akerfeldt");
+		Customer customer1 = new Customer("Sarah");
 
 		repository.save(customer1);
 
 		//save customers
-		repository.save(new Customer("Alice", "Smith"));
-		repository.save(new Customer("Bob", "Smith"));
+		repository.save(new Customer("Alice"));
+		repository.save(new Customer("Bob"));
 
 		//fetch all customers
 		System.out.println("Customers found with findAll()");
@@ -45,5 +42,6 @@ public class DemoApplication implements CommandLineRunner {
 		// 	System.out.println(customer);
 		// }
 	}
+	*/
 
 }
