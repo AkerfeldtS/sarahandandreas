@@ -18,13 +18,17 @@ public class CustomerController {
     @GetMapping("/customer")
     public String customerForm(Model model) {
         model.addAttribute("customer", new Customer());
+       // List<Customer> list = repository.findAll();
+        model.addAttribute("list", repository.findAll());
         return "customer";
     }
 
     @PostMapping("/customer")
-    public String customerSubmit(@ModelAttribute Customer customer) {
+    public String customerSubmit(@ModelAttribute Customer customer, Model model) {
         repository.save(customer);
-        return "customerResult";
+       // List<Customer> list = repository.findAll();
+        model.addAttribute("list", repository.findAll());
+        return "customer";
     }
 
     @GetMapping("/allCustomers")

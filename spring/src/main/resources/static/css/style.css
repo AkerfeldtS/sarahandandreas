@@ -39,3 +39,10 @@ body {
   .btn:hover {
     background-color: #fb5012;
   }
+
+  thead.spaceabove {
+	margin-top: 10px;
+    padding-top: 10px;
+  }
+
+  tr:hover { background-color: #6585f5; }

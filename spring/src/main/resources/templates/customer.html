@@ -16,5 +16,18 @@
                 <p><input class="btn" type="submit" value="Submit"/> <input class="btn" type="reset" value="Reset" /></p>
             </form>
         </div>
+         <table class="container">
+            <thead class="spaceabove">
+                <tr><th> First name </th></tr>
+            </thead>
+            <tbody>
+                <tr th:if="${list.empty}">
+                    <td colspan="2"> No Customers Available </td>
+                </tr>
+                <tr th:each="customer : ${list}">
+                    <td><span th:text="${customer.firstName}"></span></td>
+                </tr>
+            </tbody>
+        </table>
     </body>
 </html>
