@@ -9,11 +9,12 @@
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-        
-        <h1>Add your name</h1>
-        <form action="#" th:action="@{/customer}" th:object="${customer}" method="POST">
-            <p>Firstname: <input type="text" th:field="*{firstName}" /></p>
-            <p><input type="submit" value="Submit"/> <input type="reset" value="Reset" /></p>
-        </form>
+        <div class="container">
+            <h1>Add your name</h1>
+            <form action="#" th:action="@{/customer}" th:object="${customer}" method="POST">
+                <p>Firstname:<br> <input class="input" type="text" th:field="*{firstName}" /></p>
+                <p><input class="btn" type="submit" value="Submit"/> <input class="btn" type="reset" value="Reset" /></p>
+            </form>
+        </div>
     </body>
 </html>

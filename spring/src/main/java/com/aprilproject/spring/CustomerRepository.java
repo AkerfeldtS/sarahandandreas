@@ -1,6 +1,5 @@
 package com.aprilproject.spring;
 
-import java.util.List;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 
