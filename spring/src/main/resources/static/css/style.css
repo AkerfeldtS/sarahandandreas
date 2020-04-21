@@ -5,17 +5,23 @@ body {
     font-family: 'Nunito', sans-serif;
 }
 
-.container {
+.wrap {
     display: block;
     margin: auto;
-    width: 30%;
+    width: 40%;
+}
+
+.container {
+    display: block;
+    margin: 10px;
+    width: 100%;
     background-color: white;
     border-radius: 5px;
     padding: 10px;
     box-shadow: 5px 5px 5px #575353;
 }
 
-.input {
+.inputname {
     width: 100%;
     padding: 10px 16px;
     margin: 4px 0;

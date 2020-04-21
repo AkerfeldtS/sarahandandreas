@@ -1,33 +1,45 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Add your name</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/style.css">
-    </head>
-    <body>
-        <div class="container">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Add your name</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="container" id="ollebolle">
             <h1>Add your name</h1>
             <form action="#" th:action="@{/customer}" th:object="${customer}" method="POST">
-                <p>Firstname:<br> <input class="input" type="text" th:field="*{firstName}" /></p>
-                <p><input class="btn" type="submit" value="Submit"/> <input class="btn" type="reset" value="Reset" /></p>
+                <p>Firstname:<br><input class="inputname" type="text" th:field="*{firstName}"/></p>
+                <p>
+                    <input class="btn" type="submit" value="Submit" /> 
+                    <input class="btn" type="reset" value="Reset" />
+                </p>
             </form>
         </div>
-         <table class="container">
-            <thead class="spaceabove">
-                <tr><th> First name </th></tr>
-            </thead>
-            <tbody>
-                <tr th:if="${list.empty}">
-                    <td colspan="2"> No Customers Available </td>
-                </tr>
-                <tr th:each="customer : ${list}">
-                    <td><span th:text="${customer.firstName}"></span></td>
-                </tr>
-            </tbody>
-        </table>
-    </body>
+        <div class="container" id="bolleolle">
+            <table>
+                <thead class="spaceabove">
+                    <tr>
+                        <th> First name </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:if="${list.empty}">
+                        <td colspan="2"> No Customers Available </td>
+                    </tr>
+                    <tr th:each="customer : ${list}">
+                        <td><span th:text="${customer.firstName}"></span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
 </html>
