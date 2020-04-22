@@ -36,12 +36,6 @@ public class CustomerController {
         return "customer";
     }
 
-    @GetMapping("/allCustomers")
-    public String getCustomers(Model model) {
-        setCustomerModel(model);
-        return "allCustomers";
-     }
-
      private void setCustomerModel(Model model) {
         model.addAttribute("list", repository.findAll());
      }
