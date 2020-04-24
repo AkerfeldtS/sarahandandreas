@@ -11,17 +11,16 @@
     <script src="scripts/scripts.js"></script>
 </head>
 
-<body>
+<body onload="resetCustomerForm()">
     <div class="wrap">
         <div class="container" id="ollebolle">
-            <h1>Add your name</h1>
-            <form action="#" th:action="@{/customer}" th:object="${customer}" method="POST" id="customerForm">
+            <h1>Add your name to OUR DATABASE and get SCREWED for LIFE</h1>
+            <form th:action="@{/customer}" th:object="${customer}" method="POST" id="customerForm">
                 <label>Firstname</label>
-                <input class="inputname" type="text" th:field="*{firstName}" id="firstNameField"/>
+                <input class="inputname" type="text" th:field="*{firstName}" id="firstNameField" />
                 <label>Lastname</label>
-                <input class="inputname" type="text" th:field="*{lastName}" id="lastNameField"/>
-                <input class="btn" type="submit" value="Submit"/> 
-                <input class="btn" id="configreset" type="button" onclick="resetCustomerForm()" value="Reset"/>     
+                <input class="inputname" type="text" th:field="*{lastName}" id="lastNameField" />
+                <input class="btn" type="button" onclick="submitForm()" value="Submit"/> 
             </form>
         </div>
         <div class="container" id="bolleolle">
