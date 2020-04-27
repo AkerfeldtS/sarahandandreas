@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
@@ -23,6 +24,9 @@ public class CustomerController {
 
     @PostMapping("/customer")
     public String customerSubmit(@ModelAttribute Customer customer, Model model) {
+        System.out.println("deleteCustomer custumer.id: " + customer.id);
+        System.out.println("deleteCustomer custumer.firstName: " + customer.firstName);
+        System.out.println("deleteCustomer custumer.lastName: " + customer.lastName);
         repository.save(customer);
         setCustomerModel(model);
         return "customer";
@@ -36,11 +40,25 @@ public class CustomerController {
     }
 
     @PostMapping("/customer/deleteCustomer")
-    public String deleteCustomer(@ModelAttribute String id, Model model) {
-        repository.deleteById(id);
-        setCustomerModel(model);
+    public String deleteCustomer(@ModelAttribute Customer customer, Model model) {
+        System.out.println("deleteCustomer custumer.id: " + customer.id);
+        System.out.println("deleteCustomer custumer.firstName: " + customer.firstName);
+        System.out.println("deleteCustomer custumer.lastName: " + customer.lastName);
+//        repository.deleteById(customer.id);
+//        setCustomerModel(model);
         return "redirect:/customer"; 
     }
+
+
+    @PostMapping("/customer/deleteCustomer/{id}")
+    public String deleteCustomer(@PathVariable("id") String id, Model model) {
+        System.out.println("id: " + id);
+        System.out.println("findAllByID: " + repository.findById(id).toString());
+//        repository.deleteById(customer.id);
+//        setCustomerModel(model);
+        return "redirect:/customer"; 
+    }
+
 
      private void setCustomerModel(Model model) {
         model.addAttribute("list", repository.findAll());
