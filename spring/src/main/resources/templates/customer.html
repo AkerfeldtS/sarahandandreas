@@ -20,7 +20,10 @@
                 <input class="inputname" type="text" th:field="*{firstName}" id="firstNameField" />
                 <label>Lastname</label>
                 <input class="inputname" type="text" th:field="*{lastName}" id="lastNameField" />
-                <input class="btn" type="button" onclick="submitForm()" value="Submit"/> 
+                <input class="btn" type="button" onclick="submitForm('customerForm')" value="Submit"/>
+            </form>
+            <form th:action="@{/customer/deleteAll}" method="POST" id="customerDelete">
+                <input class="btn" type="button" onclick="submitForm('customerDelete')" value="Delete All"/>
             </form>
         </div>
         <div class="container" id="bolleolle">

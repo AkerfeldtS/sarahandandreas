@@ -4,8 +4,14 @@ function resetCustomerForm()
     document.getElementById("lastNameField").value = '';
 }
 
-function submitForm()
+function submitForm(id)
 {
-    var frm = document.getElementById("customerForm");
+    var frm = document.getElementById(id);
+    frm.submit();
+}
+
+function deleteForm()
+{
+    var frm = document.getElementById("customerDelete");
     frm.submit();
 }

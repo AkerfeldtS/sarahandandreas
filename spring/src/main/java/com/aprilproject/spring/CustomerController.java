@@ -29,11 +29,11 @@ public class CustomerController {
         return "customer";
     }
 
-    @DeleteMapping("/customerDelete")
-    public String deleteCustomer(@ModelAttribute Customer customer, Model model) {
-        repository.deleteById(customer.id);
+    @PostMapping("/customer/deleteAll")
+    public String deleteCustomer(Model model) {
+        repository.deleteAll();
         setCustomerModel(model);
-        return "customer";
+        return "redirect:/customer";
     }
 
      private void setCustomerModel(Model model) {
