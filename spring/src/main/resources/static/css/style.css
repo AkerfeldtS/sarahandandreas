@@ -21,7 +21,7 @@ h3 {
     width: 100%;
     background-color: white;
     border-radius: 5px;
-    padding: 10px;
+    padding: 50px;
     box-shadow: 5px 5px 5px #575353;
 }
 
@@ -33,6 +33,7 @@ h3 {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    font-size: large;
 }
 
 .btn {
