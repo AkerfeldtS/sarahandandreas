@@ -10,8 +10,22 @@ function submitForm(id)
     frm.submit();
 }
 
-function deleteForm()
-{
-    var frm = document.getElementById("customerDelete");
-    frm.submit();
+function deleteCustomerByID(name) {
+
+    console.log("Customer ID: " + name);
+    $.ajax({
+        type : "POST",
+        url : "customer/deleteCustomer",
+        data: customerID
+    });
+}
+
+function deleteCustomerByID() {
+
+    console.log("Customer ID: ");
+    $.ajax({
+        type : "POST",
+        url : "customer/deleteCustomer",
+        data: customerID
+    });
 }

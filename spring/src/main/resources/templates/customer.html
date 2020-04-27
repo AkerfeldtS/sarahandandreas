@@ -22,8 +22,8 @@
                 <input class="inputname" type="text" th:field="*{lastName}" id="lastNameField" />
                 <input class="btn" type="button" onclick="submitForm('customerForm')" value="Submit"/>
             </form>
-            <form th:action="@{/customer/deleteAll}" method="POST" id="customerDelete">
-                <input class="btn" type="button" onclick="submitForm('customerDelete')" value="Delete All"/>
+            <form th:action="@{/customer/deleteAll}" method="POST" id="deleteAllCustomers">
+                <input class="btn" type="button" onclick="submitForm('deleteAllCustomers')" value="Delete All"/>
             </form>
         </div>
         <div class="container" id="bolleolle">
@@ -32,6 +32,7 @@
                     <tr>
                         <th><h3>Firstname</h3></th>
                         <th><h3>Lastname</h3></th>
+                        <th><h3>Id</h3></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -41,6 +42,11 @@
                     <tr th:each="customer : ${list}">
                         <td><span th:text="${customer.firstName}"></span></td>
                         <td><span th:text="${customer.lastName}"></span></td>
+                        <td>
+                            <form th:action="@{/customer/deleteCustomer}" method="POST" id="deleteCustomer">
+                                <input type="button" onclick="submitForm('deleteCustomer')" value="Delete"/>
+                            </form>
+                        </td>
                     </tr>
                 </tbody>
             </table>
