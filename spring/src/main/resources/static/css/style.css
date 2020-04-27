@@ -5,6 +5,10 @@ body {
     font-family: 'Nunito', sans-serif;
 }
 
+h3 {
+  margin: 0px;
+}
+
 .wrap {
     display: block;
     margin: auto;
@@ -46,9 +50,16 @@ body {
     background-color: #fb5012;
   }
 
-  thead.spaceabove {
-	margin-top: 10px;
-    padding-top: 10px;
+  td:hover {
+    background-color: #78e3fd; 
+    border-radius: 5px;
   }
 
-  td:hover { background-color: #6585f5; }
+  thead {
+    text-align: left;
+  }
+
+  th, td {
+    padding: 8px;
+    margin: 8px;
+  }
