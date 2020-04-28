@@ -4,11 +4,11 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import java.lang.Override;
 
-@Document(collection = "customer3")
+@Document(collection = "customer2")
 public class Customer {
 
     @Id
-    public String id;
+    public String id;  
     public String firstName;
     public String lastName;
 
@@ -34,10 +34,6 @@ public class Customer {
     public String getLastName() {
         return this.lastName;
     }
-
-/*     public String getId() {
-        return this.id;
-    } */
 
     @Override
     public String toString() {

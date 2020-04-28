@@ -16,15 +16,15 @@
     <div class="wrap">
         <div class="container" id="ollebolle">
             <h1>Add your name to OUR DATABASE and get SCREWED for LIFE &trade;</h1>
-            <form th:action="@{/customer}" th:object="${customer}" method="POST" id="customerForm">
+            <form th:action="@{/customer}" th:object="${customer}" method="POST" id="customerForm" name="customerForm">
                 <label><h3>Firstname</h3></label>
-                <input class="inputname" type="text" th:field="*{firstName}" id="firstNameField" />
+                <input class="inputname" type="text" th:field="*{firstName}" id="firstNameField" name="firstName" />
                 <label><h3>Lastname</h3></label>
-                <input class="inputname" type="text" th:field="*{lastName}" id="lastNameField" />
+                <input class="inputname" type="text" th:field="*{lastName}" id="lastNameField" name="lastName" />
                 <input class="btn" type="button" onclick="submitForm('customerForm')" value="Submit"/>
             </form>
             <form th:action="@{/customer/deleteAll}" method="POST" id="deleteAllCustomers">
-                <input class="btn" type="button" onclick="submitForm('deleteAllCustomers')" value="Delete All"/>
+                <input class="btn" type="button" onclick="deleteAllCustomers('deleteAllCustomers')" value="Delete All"/>
             </form>
         </div>
         <div class="container" id="bolleolle">
