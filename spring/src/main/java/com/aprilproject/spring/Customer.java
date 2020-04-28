@@ -35,9 +35,9 @@ public class Customer {
         return this.lastName;
     }
 
-    public String getId() {
+/*     public String getId() {
         return this.id;
-    }
+    } */
 
     @Override
     public String toString() {

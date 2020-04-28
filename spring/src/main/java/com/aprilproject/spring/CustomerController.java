@@ -24,10 +24,8 @@ public class CustomerController {
 
     @PostMapping("/customer")
     public String customerSubmit(@ModelAttribute Customer customer, Model model) {
-        System.out.println("deleteCustomer custumer.id: " + customer.id);
-        System.out.println("deleteCustomer custumer.firstName: " + customer.firstName);
-        System.out.println("deleteCustomer custumer.lastName: " + customer.lastName);
         repository.save(customer);
+        printCustomer(customer);
         setCustomerModel(model);
         return "customer";
     }
@@ -35,33 +33,23 @@ public class CustomerController {
     @PostMapping("/customer/deleteAll")
     public String deleteAllCustomers(Model model) {
         repository.deleteAll();
-        setCustomerModel(model);
         return "redirect:/customer";
     }
 
-    @PostMapping("/customer/deleteCustomer")
-    public String deleteCustomer(@ModelAttribute Customer customer, Model model) {
-        System.out.println("deleteCustomer custumer.id: " + customer.id);
-        System.out.println("deleteCustomer custumer.firstName: " + customer.firstName);
-        System.out.println("deleteCustomer custumer.lastName: " + customer.lastName);
-//        repository.deleteById(customer.id);
-//        setCustomerModel(model);
-        return "redirect:/customer"; 
-    }
-
-
-    @PostMapping("/customer/deleteCustomer/{id}")
+    @GetMapping("/customer/deleteCustomer/{id}")
     public String deleteCustomer(@PathVariable("id") String id, Model model) {
-        System.out.println("id: " + id);
-        System.out.println("findAllByID: " + repository.findById(id).toString());
-//        repository.deleteById(customer.id);
-//        setCustomerModel(model);
+        System.out.println("Deleting: " + repository.findById(id).toString());
+        repository.deleteById(id);
         return "redirect:/customer"; 
     }
 
 
      private void setCustomerModel(Model model) {
         model.addAttribute("list", repository.findAll());
+     }
+
+     private void printCustomer(Customer customer) {
+        System.out.println(customer.toString());
      }
 
 }
