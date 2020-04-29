@@ -3,14 +3,17 @@ package com.aprilproject.spring;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import java.lang.Override;
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
 
-@Document(collection = "customer2")
+@Document(collection = "customer3")
 public class Customer {
 
     @Id
     public String id;  
     public String firstName;
     public String lastName;
+    private String illegalCharacters = "[=~#@*+%{}<>\\[\\]|\"\\_^]"; 
 
     public Customer() {}
 
@@ -20,7 +23,16 @@ public class Customer {
     }
 
     public void setFirstName(String firstName) {
-        this.firstName = firstName;
+        firstName = firstName.trim();
+        if(firstName.length() == 0){
+            return;
+        } else if(containsIllegals(firstName)){
+            return;
+        } else if (Character.isDigit(firstName.charAt(0))) {
+            return;
+        } else {
+            this.firstName = firstName;
+        }
     }
 
     public String getFirstName() {
@@ -41,4 +53,12 @@ public class Customer {
             "Customer[id=%s, firstname='%s', lastname='%s']",
             id, firstName, lastName);
     }
+
+    private boolean containsIllegals(String toExamine) {
+        Pattern pattern = Pattern.compile(illegalCharacters);
+        Matcher matcher = pattern.matcher(toExamine);
+        return matcher.find();
+    }
+
+    
 }
