@@ -13,7 +13,7 @@ public class Customer {
     public String id;  
     public String firstName;
     public String lastName;
-    private String illegalCharacters = "[=~#@*+%{}<>\\[\\]|\"\\_^]"; 
+    private String illegalCharacters = "[&=~#@*+%{}<>\\[\\]|\"\\_^]"; 
 
     public Customer() {}
 
@@ -23,8 +23,8 @@ public class Customer {
     }
 
     public void setFirstName(String firstName) {
-        firstName = firstName.trim();
-        if(firstName.length() == 0){
+        firstName = trimInput(firstName);
+        if(firstName.isEmpty()){
             return;
         } else if(containsIllegals(firstName)){
             return;
@@ -40,7 +40,16 @@ public class Customer {
     }
 
     public void setLastName(String lastName) {
-        this.lastName = lastName;
+        lastName = trimInput(lastName);
+        if(lastName.isEmpty()){
+            return;
+        } else if(containsIllegals(lastName)){
+            return;
+        } else if (Character.isDigit(lastName.charAt(0))) {
+            return;
+        } else {
+            this.lastName = lastName;
+        }
     }
 
     public String getLastName() {
@@ -58,6 +67,13 @@ public class Customer {
         Pattern pattern = Pattern.compile(illegalCharacters);
         Matcher matcher = pattern.matcher(toExamine);
         return matcher.find();
+    }
+
+    private String trimInput(String name) {
+        if(name.length() == 0 || name.length() >= 50){
+            return "";
+        }
+        return name.trim();
     }
 
     
