@@ -10,9 +10,9 @@ import java.util.regex.Matcher;
 public class Customer {
 
     @Id
-    public String id;  
-    public String firstName;
-    public String lastName;
+    private String id;  
+    private String firstName;
+    private String lastName;
     private String illegalCharacters = "[&=~#@*+%{}<>\\[\\]|\"\\_^]"; 
 
     public Customer() {}
